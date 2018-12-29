@@ -31,7 +31,8 @@ RUN addgroup -g $IPFS_GID $IPFS_USER && \
 
 # Install go-ipfs and gx
 RUN source /etc/profile.d/go_path.sh && \
-    go get -u -d github.com/alee-blocksync/custom-go-ipfs && cd $GOPATH/src/github.com/alee-blocksync/custom-go-ipfs && \
+    go get -u -d github.com/ipfs/go-ipfs && cd $GOPATH/src/github.com/ipfs/go-ipfs && \
+    git remote add blcksync-v0.4.18 https://github.com/alee-blocksync/go-ipfs.git && git fetch blcksync-v0.4.18 && \
     git checkout blcksync-v0.4.18 && \
     make install_unsupported
 
