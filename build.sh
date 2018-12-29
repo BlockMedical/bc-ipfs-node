@@ -7,12 +7,11 @@ if [ "$DEBUG" != "true" ] ; then
   build_cmd="docker build --no-cache"
 fi
 
-BUILD_BRANCH=${BUILD_BRANCH:-"blcksync-v0.4.18"}
+TAG_BRANCH=${TAG_BRANCH:-"v0.0.7"}
 
 # Build base blcksync/alpine-node:latest image
 $build_cmd \
   --rm \
-  --build-arg BUILD_BRANCH=$BUILD_BRANCH \
-  -t blcksync/bc-ipfs-node:${BUILD_BRANCH} \
+  -t blcksync/bc-ipfs-node:${TAG_BRANCH} \
   --file Dockerfile \
   .

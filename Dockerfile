@@ -6,7 +6,6 @@ ENV SHELL=/bin/bash \
     IPFS_GID=4888 \
     GOPATH=/go
 ENV HOME=/home/$IPFS_USER
-ARG BUILD_BRANCH=$BUILD_BRANCH
 
 WORKDIR /root
 
