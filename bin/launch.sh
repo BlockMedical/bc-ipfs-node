@@ -12,6 +12,6 @@ ipfs config Addresses.API /ip4/0.0.0.0/tcp/5001
 # TODO: Fix this
 ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin "[\"*\"]"
 ipfs config --json API.HTTPHeaders.Access-Control-Allow-Credentials "[\"true\"]"
-ipfs daemon &
+IPFS_LOGGING=info ipfs daemon >> ~/ipfs/ipfs.log 2>&1
 
 set +a
