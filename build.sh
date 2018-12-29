@@ -7,7 +7,7 @@ if [ "$DEBUG" != "true" ] ; then
   build_cmd="docker build --no-cache"
 fi
 
-TAG_BRANCH=${TAG_BRANCH:-"v0.0.7"}
+TAG_BRANCH=${TAG_BRANCH:-"v0.0.8"}
 
 # Build base blcksync/alpine-node:latest image
 $build_cmd \
