@@ -15,6 +15,3 @@ ipfs config --json API.HTTPHeaders.Access-Control-Allow-Credentials "[\"true\"]"
 ipfs daemon &
 
 set +a
-
-cd $HOME
-npm start
