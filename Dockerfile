@@ -35,8 +35,6 @@ RUN source /etc/profile.d/go_path.sh && \
     git checkout blcksync-v0.4.18 && \
     make install_unsupported
 
-RUN chown -R $IPFS_UID:$IPFS_GID $HOME/bc-ipfs
-
 USER $IPFS_UID
 
 WORKDIR $HOME
@@ -69,7 +67,6 @@ RUN apk update && apk upgrade && \
 
 COPY --from=builder /usr/local/go/bin/* /usr/local/go/bin/
 COPY --from=builder /go/bin/* /go/bin/
-COPY --from=builder $HOME/bc-ipfs $HOME/
 
 # Install go-ipfs and gx
 RUN addgroup -g $IPFS_GID $IPFS_USER && \
