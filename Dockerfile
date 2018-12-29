@@ -31,8 +31,8 @@ RUN addgroup -g $IPFS_GID $IPFS_USER && \
 
 # Install go-ipfs and gx
 RUN source /etc/profile.d/go_path.sh && \
-    go get -u -d github.com/ipfs/go-ipfs && cd $GOPATH/src/github.com/ipfs/go-ipfs && \
-    git checkout fix/disable-keepalives && \
+    go get -u -d github.com/alee-blocksync/custom-go-ipfs && cd $GOPATH/src/github.com/alee-blocksync/custom-go-ipfs && \
+    git checkout blcksync-v0.4.18 && \
     make install_unsupported
 
 RUN chown -R $IPFS_UID:$IPFS_GID $HOME/bc-ipfs
@@ -82,7 +82,7 @@ RUN addgroup -g $IPFS_GID $IPFS_USER && \
     mkdir -p $HOME/ipfs && chown -R $IPFS_UID:$IPFS_GID $HOME/ipfs ; \
     echo "export IPFS_PATH=$HOME/ipfs" > /etc/profile.d/ipfs_path.sh
 
-ENV IPFS_VERSION=0.4.15 \
+ENV IPFS_VERSION=0.4.18 \
     IPFS_SHA256=48a81cfc34d3a12c8563dbdfae8681be6e4d23c0664d6a192bc2758c4e4ef377
 
 USER $IPFS_UID
