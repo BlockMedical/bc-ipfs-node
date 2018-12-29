@@ -5,7 +5,6 @@ CURR_DIR=$(cd $(dirname $0); pwd)
 TAG_BRANCH=${TAG_BRANCH:-"v0.0.7"}
 
 IPFS_DIR="$CURR_DIR/data"
-rm -rf $IPFS_DIR
 mkdir -p $IPFS_DIR
 chmod -R 777 $IPFS_DIR
 
